@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Temple Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+        body{
+            background-color: beige;
+            margin-top: 46px;
+        }
+        .heading{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin: 20px auto; 
+        }
+        .heading h1{
+            font-size: 50px;
+            color: #000;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .heading h1::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            display: block;
+            margin: 0 auto;
+            background-color: #4caf50;
+        }
+        
+        .heading p {
+           font-size: 18px;
+           color: black;
+           /* color: #666; */
+           margin-bottom: 35px;
+        }
+        .container{
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+        .templeinfo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 2s ease;
+        }
+        .templeimage{
+            flex: 1;
+            margin-right: 40px;
+            overflow: hidden;
+        }
+        .templeimage img {
+    max-width: 90%;
+    height: 550px;
+    display: block;
+    transition: 0.5s ease;
+    animation: fadeInRight 2s ease;
+    width: 85%;
+}
+        .templeimage:hover img{
+            transform: scale(1.2);
+
+        }
+        .templecontent{
+            flex: 1;
+        }
+        .templecontent h2{
+            font-size: 23px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+       
+        .templecontent p {
+          font-size: 18px;
+          line-height: 1.5;
+          /* color: #666; */
+          color: black;
+         }
+        .templecontent .read-more{
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 19px;
+            background-color: #4caf50;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 15px;
+            transition: 0.3s ease;
+        }
+        .templecontent .read-more:hover{
+            background-color: #3e8e41;
+        }
+        .templecontent button{
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .templecontent button:hover{
+            transform: scale(0.9);
+        }
+        @media screen and (max-width: 768px){
+            .heading{
+                padding: 0px 20px;
+
+            }
+            .heading h1{
+                font-size: 36px;
+            }
+            .heading p{
+                font-size: 17px;
+                margin: 0px;
+            }
+            .container{
+                padding: 0px;
+            }
+            .templeinfo{
+                padding: 20px;
+                flex-direction: column;
+
+            }
+            .templeimage{
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
+            .templecontent p{
+                padding: 0px;
+                font-size: 16px;
+            }
+            .templecontent .read-more{
+                font-size: 16px;
+               
+                
+            }
+            
+            
+            
+
+        }
+        @keyframes fadeInUp{
+            0%{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px)
+            }
+        }
+        @keyframes fadeInRight{
+            0%{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        .facts {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.service-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: darkkhaki;
+}
+
+.fact1 {
+    flex: 1;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 50%;
+    margin: 0px 10px;
+    transition: 0.5s ease;
+}
+.fact1:hover{
+    transform: scale(1.05);
+}
+
+.fact1 h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: orange;
+}
+@media screen and (max-width: 768px) {
+  .fact1 {
+    flex: 0 0 100%; /* Make boxes take full width on smaller screens */
+    justify-content: space-between;
+    max-width: none; /* Remove maximum width */
+    flex-wrap: wrap;
+    margin: 0 0 20px;
+    
+  }
+}
+.spots {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
+.spots1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.spot1 {
+    flex: 1;
+    background-color: lightgreen;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 100%; 
+    margin: 0px 10px;
+}
+.spot1 img {
+    height: 193px;
+    border-radius: 10px;
+    width: 100%;
+    margin-left: -6px;
+}
+@media screen and (max-width: 768px) {
+  .spot1 {
+    flex: 0 0 100%; /* Make boxes take full width on smaller screens */
+    justify-content: space-between;
+    max-width: none; /* Remove maximum width */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 0 20px;
+    
+  }
+}   
+.spots .spot1 .btn{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+.spots .spot1 .btn:hover{
+    letter-spacing: 1px;
+}
+
+
+
+
+
+.container1 {
+    /* margin-top: -149px; */
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+   
+}
+ .box{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    /* padding:30px 20px; */
+    margin: 10px 10px;
+}
+
+/* .container1 .box-container .box img{
+    height: 80px;
+} */
+
+.container1 .box-container .box h4{
+    color: black;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+.container1 .box-container .box p{
+    color:#777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.container1 .box-container .box .btn1{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    text-decoration: none;
+}
+
+.container1 .box-container .box .btn1:hover{
+    letter-spacing: 1px;
+}
+.container1 .box-container .box:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+}
+@media (max-width:1000px){
+    .box-container{
+      flex-wrap: wrap;
+    }
+    .side-nav {
+    height: 30%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.35s;
+}
+
+   
+}
+.container1 .box-container .box img {
+    height: 171px;
+    width: 257px;
+    border-radius: 18px 15px;
+
+}
+.container1 .box-container .box {
+    box-shadow: px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 27px 20px;
+    width: 322px;
+}
+/* .templeimage a button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 166px;
+    margin-top: 55px;
+    background-color: red;
+    color: white;
+} */
+.templeimage a{
+    text-decoration: none;
+}
+.templeimage a button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 166px;
+    margin-top: 55px;
+    background-color: red;
+    color: floralwhite;
+    height: 39px;
+    padding: 10px 12px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+i.fa-solid fa-play{
+ 
+  color: black;
+
+}
+.fa-play:before {
+    content: "\f04b";
+    padding: 2px 3px;
+    cursor: pointer;
+}
+body{
+  font-family: "Arial", Serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  
+}
+.navbar{
+  background-color: #3b5998;
+  overflow: hidden;
+  height: 63px;
+}
+.navbar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar ul{
+  padding: 0;
+  margin-top: 8px;
+  list-style: none;
+  overflow: auto;
+}
+.navbar a:hover{
+  background-color: #aaa;
+  color: #000;
+}
+.side-nav {
+    height: 45%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.35s;
+}
+.side-nav a{
+  text-decoration: none;
+  padding: 10px 10px 10px 30px;
+  display: block;
+  font-size: 22px;
+  color: #aaa;
+}
+.side-nav a:hover{
+  color: #ffffff;
+}
+.side-nav .btn-close{
+  position:absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+}
+#main{
+  transition: 0.35s;
+  padding: 20px;
+  width: 100%;
+}
+
+@media only screen and (max-width:500px){
+  .navbar ul li{
+    display: none;
+  }
+  .templeimage a button{
+    justify-content: center;
+    text-align: center;
+  }
+}
+/* .location1{
+    justify-content: center;
+    text-align: center;
+} */
+.location1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.location2{
+    justify-content: center;
+    text-align: center;
+}
+.videos {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* .video1 iframe{
+    width: 50%;
+    height: 50%;
+} */
+.video1{
+    margin-top: 20px;
+    margin-left: 20px;
+   
+}
+.video1 iframe{
+    border-radius: 10px;
+}
+
+.container2 {
+    /* margin-top: -149px; */
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+.box-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+   
+}
+ .box1{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    /* padding:30px 20px; */
+    margin: 10px 10px;
+}
+
+@media (max-width:1000px){
+    .box-container1{
+      flex-wrap: wrap;
+    }
+    .footer1{
+        justify-content: center;
+        text-align: center;
+    }
+
+   
+}
+/* .container2 .box-container1 .box1 {
+    box-shadow: px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 27px 20px;
+    width: 322px;
+} */
+.footer1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <span class="open-slide">
+          <a href="#" onclick='openSideMenu()'>
+            <svg width='30' height='30'>
+              <path d='M0,5 30,5' stroke='#fff' stroke-width='5'/>
+              <path d='M0,14 30,14' stroke='#fff' stroke-width='5' />
+              <path d='M0,23 30,23' stroke='#fff' stroke-width='5' />
+            </svg>
+          </a>
+         </span>
+         
+         <!-- <ul class="navbar-nav">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Services</a></li>
+           <li><a href="#">Contact</a></li>
+         </ul> -->
+         
+       </nav>
+       
+       <div id='side-menu' class='side-nav'>
+         <a href="#" class='btn-close' onclick='closeSideMenu()'>&times;</a>
+         <a href="#heading1">Home</a>
+         <a href="#facts1">Facts</a>
+         <a href="#spots2">Spots</a>
+         <a href="#location">Location</a>
+         <a href="#video">Videos</a>
+       </div>
+       
+       <!-- <div id="main">
+         <h1>Responsive Side Menu</h1>
+       </div> -->
+    <div class="heading" id="heading1">
+        <h1>Mahadeva Malai Temple</h1>
+        <p>A temple dedicated to Shiva lies in the Mahadeva Malai Hills in Kankuppam village, Vellore district, Tamil Nadu. The temple lies to the west of Katpadi. It is situated on the hill-top, which is of a single stone. The temple is called Mahadeva Malai Temple, which was built by a trader of the Pandya kingdom. The temple is believed to be five hundred years old. The consort of Shiva in this temple is Goddess Kamakshi.
+            <br>
+           <strong> District: Vellore</strong>
+            <br>
+            <strong>State: Tamilnadu</strong> 
+        </p>
+
+    </div>
+    <div class="container">
+        <section class="templeinfo">
+            <div class="templeimage">
+                <img src="mahadeva-malai-temple.jpg" alt="error">
+                <a href="index21.html">
+                    <button>Watch 360
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </a>
+
+            </div>
+            <div class="templecontent">
+                <h2>Overview</h2>
+                <p>
+                    The temple has been built in the Dravidian style of architecture. The presiding deity is Shiva. His consort is Goddess Kamakshi.
+
+                    A huge idol of Dakshinamoorthy has been installed. There is an idol of Kali Amman also in the temple. The Dwajasthambam stands in front of the Mandapam. A meditation hall has been built. There is a temple tank on the premises.
+                    
+                    There is an arch that welcomes visitors to the temple at the 19th kilometer on the Gudiyatham highway west of Katpadi. From the Gudiyatham town, the welcome arch to Mahadeva Mount is situated 11 kilometers on the way to Katpadi.
+                    Devotees visit the Mahadeva Malai Temple to seek Moksha (salvation). The people suffering from ailments and diseases visit this temple and make offerings to Shiva to be cured of diseases and ailments. People in financial distress or facing monetary issues visit the temple and offer prayers to Shiva to help them overcome financial obstacles. Others come to pray for knowledge and academic prowess. Some devotees offer prayers and pooja before they purchase vehicles.
+                    The temple celebrates the Maha Shivratri festival on a grand scale every year in February-March.
+
+                </p>
+               <!-- <button class="read-more">Read More</button> -->
+            </div>
+        </section>
+    </div>
+    <div class="facts"  id="facts1">
+        <!-- <img src="fact.png" alt="error"> -->
+        <h1>Interesting Facts about this temple</h1>
+    </div>
+
+    <section class="service-boxes">
+        <div class="fact1">
+            <h2>Built in 500 years ago</h2>
+            <p>500 years ago, Mahadeva Malai temple was built by a trader of the Pandya kingdom. In this temple the Lord Shivalingam and Nandi are swayambu. The consort of the Lord Shiva is Goddess Kamakshi.</p>
+        </div>
+
+        <div class="fact1">
+            <h2>"Divine Encounters: The Legend of Shiva and the Trader at Keezh Vazhi Thunai Kuppam</h2>
+            <p>An old man approached the crestfallen trader promising to show the Lord to him. They reached a hill and the old man turned out to be Shiva, who commanded the devotee to build a temple there. The village from where the trader was met by came to be called Keezh Vazhi Thunai Kuppam</p>
+        </div>
+
+        <div class="fact1">
+            <h2>The Divine Assignment: Mahananda's Mission at Mahadeva Malai</h2>
+            <p>On December 25, 2002, at the time of midnight Lord Shiva appeared before Mahananda and said, "You are very fortunate in this life; you are a siddha with a boon to live for a thousand years; go to Mahadeva Malai and live in a cave there, worship Me and protect the devotees. Lord Shiva disappeared after that.
+            </p>
+        </div>
+        
+
+       
+    </section>
+     <div class="spots1" id="spots2">
+        <!-- <img src="fact.png" alt="error"> -->
+        <h1>Nearby Spots to Visit</h1>
+     </div>
+    <!-- <section class="spots">
+        
+        <div class="spot1">
+            <img src="jallianwala-bagh.webp" alt="error">
+           <h2>Jallianwala Bagh - War Memorial
+           </h2>
+            <a href="" class="btn">read more</a>
+
+        </div>
+
+        <div class="spot1">
+
+        </div>
+
+        <div class="spot1">
+
+        </div>
+
+
+
+
+
+
+    </section> -->
+    
+
+
+
+
+    <div class="container1">    
+          <div class="box-container">
+              <div class="box">                 
+                      <img src="Sripuram_Temple.jpg" alt="error">
+                   <h4 class="active">Sri Lakshmi Narayani Golden Temple</h4>
+                  <a href="https://en.wikipedia.org/wiki/Sri_Lakshmi_Narayani_Golden_Temple" class="btn1">read more</a>
+              </div>     
+              <div class="box">       
+                      <img src="vellorefort.jpg" alt="error">
+                    <h4 class="active"> Vellore Fort
+                    </h4>
+                  <a href="https://en.wikipedia.org/wiki/Vellore_Fort" class="btn1">read more</a>
+              </div>
+              <div class="box">
+                <!-- <img src="icon-3.png" alt="">
+                <h3>JavaScript</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p> -->
+                <img src="jalakandeswar-temple.jpg" alt="error">
+                <h4 class="active">Jalakandeswarar Temple, Vellore</h4>
+                <a href="https://en.wikipedia.org/wiki/Jalakandeswarar_Temple,_Vellore" class="btn1">read more</a>
+            </div>
+    
+            <div class="box">
+                <!-- <img src="icon-4.png" alt="">
+                <h3>SASS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p> -->
+                <img src="amirthi-zoological-park.jpg" alt="error">
+                <h4 class="active">Amirthi Zoological Park</h4>
+                <a href="https://en.wikipedia.org/wiki/Amirthi_Zoological_Park" class="btn1">read more</a>
+            </div>
+
+             </div>
+    </div>
+    <div class="location1" id="location">
+        <h1>Location</h1>
+    </div>
+    <div class="location2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6331391921462!2d78.96233187484559!3d12.995300414358718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad6bafd79cd255%3A0x65f7dde6f94e06bc!2sMahadeva%20Malai%20Temple!5e0!3m2!1sen!2sin!4v1697100850340!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+    <div class="videos" id="video">
+        <h1>Videos</h1>
+    </div>
+    <!-- <div class="video1">
+        <iframe width="405px" height="415" src="https://www.youtube.com/embed/n3znrmSCWKk?si=zY9_0Zg8bqm8zLtm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="405px" height="415" src="https://www.youtube.com/embed/UHA4l_Nvzss?si=r97nIAHPqQ4Wtg9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div> -->
+
+
+    <div class="container2">    
+        <div class="box-container1">
+            <div class="box1">     
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/n3znrmSCWKk?si=zY9_0Zg8bqm8zLtm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+                    
+            </div>     
+            <div class="box1">  
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/UHA4l_Nvzss?si=r97nIAHPqQ4Wtg9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+            </div>
+            <div class="box1">
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/N9SDxG2TuYw?si=25R-3-sA3N5I3Axa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          <div class="box1">
+            <iframe width="350px" height="415" src="https://www.youtube.com/embed/f9SbsR7VeDo?si=EOqXugarXpa9_srQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+             
+          </div>
+
+           </div>
+    </div>
+        <div class="footer1">
+               <p>&copy; 2023 Divine Voyages. All rights reserved.</p>
+        </div>
+
+
+  
+    <script src="main1.js">
+       
+    </script>
+</body>
+</html>

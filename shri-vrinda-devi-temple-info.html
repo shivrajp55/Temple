@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Temple Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+       *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+        body{
+            background-color: beige;
+            margin-top: 46px;
+        }
+        .heading{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin: 20px auto; 
+        }
+        .heading h1{
+            font-size: 50px;
+            color: #000;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .heading h1::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            display: block;
+            margin: 0 auto;
+            background-color: #4caf50;
+        }
+        
+        .heading p {
+           font-size: 18px;
+           color: black;
+           /* color: #666; */
+           margin-bottom: 35px;
+        }
+        .container{
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+        .templeinfo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 2s ease;
+        }
+        .templeimage{
+            flex: 1;
+            margin-right: 40px;
+            overflow: hidden;
+        }
+        .templeimage img {
+    max-width: 90%;
+    height: 550px;
+    display: block;
+    transition: 0.5s ease;
+    animation: fadeInRight 2s ease;
+    width: 85%;
+}
+        .templeimage:hover img{
+            transform: scale(1.2);
+
+        }
+        .templecontent{
+            flex: 1;
+        }
+        .templecontent h2{
+            font-size: 23px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+       
+        .templecontent p {
+          font-size: 18px;
+          line-height: 1.5;
+          /* color: #666; */
+          color: black;
+         }
+        .templecontent .read-more{
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 19px;
+            background-color: #4caf50;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 15px;
+            transition: 0.3s ease;
+        }
+        .templecontent .read-more:hover{
+            background-color: #3e8e41;
+        }
+        .templecontent button{
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .templecontent button:hover{
+            transform: scale(0.9);
+        }
+        @media screen and (max-width: 768px){
+            .heading{
+                padding: 0px 20px;
+
+            }
+            .heading h1{
+                font-size: 36px;
+            }
+            .heading p{
+                font-size: 17px;
+                margin: 0px;
+            }
+            .container{
+                padding: 0px;
+            }
+            .templeinfo{
+                padding: 20px;
+                flex-direction: column;
+
+            }
+            .templeimage{
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
+            .templecontent p{
+                padding: 0px;
+                font-size: 16px;
+            }
+            .templecontent .read-more{
+                font-size: 16px;
+               
+                
+            }
+            
+            
+            
+
+        }
+        @keyframes fadeInUp{
+            0%{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px)
+            }
+        }
+        @keyframes fadeInRight{
+            0%{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        .facts {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.service-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: darkkhaki;
+}
+
+.fact1 {
+    flex: 1;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 50%;
+    margin: 0px 10px;
+    transition: 0.5s ease;
+}
+.fact1:hover{
+    transform: scale(1.05);
+}
+
+.fact1 h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: orange;
+}
+@media screen and (max-width: 768px) {
+  .fact1 {
+    flex: 0 0 100%; /* Make boxes take full width on smaller screens */
+    justify-content: space-between;
+    max-width: none; /* Remove maximum width */
+    flex-wrap: wrap;
+    margin: 0 0 20px;
+    
+  }
+}
+.spots {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
+.spots1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.spot1 {
+    flex: 1;
+    background-color: lightgreen;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 100%; 
+    margin: 0px 10px;
+}
+.spot1 img {
+    height: 193px;
+    border-radius: 10px;
+    width: 100%;
+    margin-left: -6px;
+}
+@media screen and (max-width: 768px) {
+  .spot1 {
+    flex: 0 0 100%; /* Make boxes take full width on smaller screens */
+    justify-content: space-between;
+    max-width: none; /* Remove maximum width */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 0 20px;
+    
+  }
+}   
+.spots .spot1 .btn{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+.spots .spot1 .btn:hover{
+    letter-spacing: 1px;
+}
+
+
+
+
+
+.container1 {
+    /* margin-top: -149px; */
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+   
+}
+ .box{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    /* padding:30px 20px; */
+    margin: 10px 10px;
+}
+
+/* .container1 .box-container .box img{
+    height: 80px;
+} */
+
+.container1 .box-container .box h4{
+    color: black;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+.container1 .box-container .box p{
+    color:#777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.container1 .box-container .box .btn1{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    text-decoration: none;
+}
+
+.container1 .box-container .box .btn1:hover{
+    letter-spacing: 1px;
+}
+.container1 .box-container .box:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+}
+@media (max-width:1000px){
+    .box-container{
+      flex-wrap: wrap;
+    }
+    .side-nav {
+    height: 30%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.35s;
+}
+
+   
+}
+.container1 .box-container .box img {
+    height: 171px;
+    width: 257px;
+    border-radius: 18px 15px;
+
+}
+.container1 .box-container .box {
+    box-shadow: px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 27px 20px;
+    width: 322px;
+}
+/* .templeimage a button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 166px;
+    margin-top: 55px;
+    background-color: red;
+    color: white;
+} */
+.templeimage a{
+    text-decoration: none;
+}
+.templeimage a button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 166px;
+    margin-top: 55px;
+    background-color: red;
+    color: floralwhite;
+    height: 39px;
+    padding: 10px 12px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+i.fa-solid fa-play{
+ 
+  color: black;
+
+}
+.fa-play:before {
+    content: "\f04b";
+    padding: 2px 3px;
+    cursor: pointer;
+}
+body{
+  font-family: "Arial", Serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  
+}
+.navbar{
+  background-color: #3b5998;
+  overflow: hidden;
+  height: 63px;
+}
+.navbar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar ul{
+  padding: 0;
+  margin-top: 8px;
+  list-style: none;
+  overflow: auto;
+}
+.navbar a:hover{
+  background-color: #aaa;
+  color: #000;
+}
+.side-nav {
+    height: 45%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.35s;
+}
+.side-nav a{
+  text-decoration: none;
+  padding: 10px 10px 10px 30px;
+  display: block;
+  font-size: 22px;
+  color: #aaa;
+}
+.side-nav a:hover{
+  color: #ffffff;
+}
+.side-nav .btn-close{
+  position:absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+}
+#main{
+  transition: 0.35s;
+  padding: 20px;
+  width: 100%;
+}
+
+@media only screen and (max-width:500px){
+  .navbar ul li{
+    display: none;
+  }
+  .templeimage a button{
+    justify-content: center;
+    text-align: center;
+  }
+}
+/* .location1{
+    justify-content: center;
+    text-align: center;
+} */
+.location1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.location2{
+    justify-content: center;
+    text-align: center;
+}
+.videos {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* .video1 iframe{
+    width: 50%;
+    height: 50%;
+} */
+.video1{
+    margin-top: 20px;
+    margin-left: 20px;
+   
+}
+.video1 iframe{
+    border-radius: 10px;
+}
+
+.container2 {
+    /* margin-top: -149px; */
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+.box-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+   
+}
+ .box1{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    /* padding:30px 20px; */
+    margin: 10px 10px;
+}
+
+@media (max-width:1000px){
+    .box-container1{
+      flex-wrap: wrap;
+    }
+    .footer1{
+        justify-content: center;
+        text-align: center;
+    }
+
+   
+}
+/* .container2 .box-container1 .box1 {
+    box-shadow: px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 27px 20px;
+    width: 322px;
+} */
+.footer1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <span class="open-slide">
+          <a href="#" onclick='openSideMenu()'>
+            <svg width='30' height='30'>
+              <path d='M0,5 30,5' stroke='#fff' stroke-width='5'/>
+              <path d='M0,14 30,14' stroke='#fff' stroke-width='5' />
+              <path d='M0,23 30,23' stroke='#fff' stroke-width='5' />
+            </svg>
+          </a>
+         </span>
+         
+         <!-- <ul class="navbar-nav">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Services</a></li>
+           <li><a href="#">Contact</a></li>
+         </ul> -->
+         
+       </nav>
+       
+       <div id='side-menu' class='side-nav'>
+         <a href="#" class='btn-close' onclick='closeSideMenu()'>&times;</a>
+         <a href="#heading1">Home</a>
+         <a href="#facts1">Facts</a>
+         <a href="#spots2">Spots</a>
+         <a href="#location">Location</a>
+         <a href="#video">Videos</a>
+       </div>
+
+
+
+
+
+
+
+    <div class="heading" id="heading1">
+        <h1>Shri Vrinda Devi Temple</h1>
+        <p>Vrindavan is completely under Vrinda-devi’s grace. Without the mercy of Srimati Vrinda-devi, it is not possible to enter into the pastimes of Srimati Radharani and Krishna, not even as a listener in an audience.  
+            <br>
+           <strong> District: Mathura</strong>
+            <br>
+            <strong>State: Uttarpradesh</strong> 
+        </p>
+
+    </div>
+    <div class="container">
+        <section class="templeinfo">
+            <div class="templeimage">
+                <img src="shri-vrindadevi-temple.jpeg" alt="error">
+                <a href="index15.html">
+                    <button>Watch 360
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </a>
+
+            </div>
+            <div class="templecontent">
+                <h2>Overview</h2>
+                <p>
+                    The whole Braj is the home of Vrinda Devi. It is written in scriptures about this place, that over one and a half miles distance from Nandgaon on the west side, you will find Vrinda Devi's Residence. So this is the same Vrinda Devi's place, a distance of one and a half-mile, situated in the west direction of Nandgaon. On the front side is the Vrinda Kund and on the backside, there is Gupt Kund, the first yoga peeth. There are a total of 8 yoga peeth's in Braj where Radha and Krishna perform various pastimes. The first of these is the Gupt Kund situated just backside of this temple. The queen of Braj is Shri Radha and the king is Shri Krishna and the pastimes are managed by Vrinda Devi. Every pastime in Braj is headed by Vrinda Devi. From 7:00 to 8:24 in the morning there are still pastimes going on.  Everywhere Mangala Aarti starts from 4:00 am but here at 7:00 in the morning, but this temple opens at 7:00 am When the temple opens at 7:00 morning, Radha Krishna enters in pastimes, Vrinda Devi comes here to manage it. The temple opens after Radha Krishna arrives, Pastimes starts from 7:00 and ends at 8:24 morning, Radha Krishna goes after finishing Pastimes. Krishna goes for cow grazing and Radha Rani goes to worship the sun god. When you go from Chhata to Govardhana, there is a village named Bhanakala, Radha Rani goes there to worships sun god.
+
+                </p>
+               <!-- <button class="read-more">Read More</button> -->
+            </div>
+        </section>
+    </div>
+    <div class="facts" id="facts1">
+        <!-- <img src="fact.png" alt="error"> -->
+        <h1>Interesting Facts about this temple</h1>
+    </div>
+
+    <section class="service-boxes">
+        <div class="fact1">
+            <h2>Vrindavana Forest: Sacred Legends and Significance of Vrinda-devi's Penance</h2>
+            <p>
+                The Vrindavana forest is named after Vrinda-devi, who performed penances here for 60,000 years. She was born as the daughter of Emperor Kedera, a very pious king that attained Goloka Vrindavana. His daughter Vrinda-devi, after sanctifying the forest by her penance, also attained Goloka.
+            </p>
+        </div>
+
+        <div class="fact1">
+            <h2>Aesthetic place to visit</h2>
+            <p>The divine kund is lined by beautiful flower gardens and trees that significantly add to the beauty of the place. Also known as the Tulsi, Vrinda Devi is believed to be the presiding goddess of Vrindavan and hence is worshipped here since the ancient times. It is believed that no visit to the Braj dham is complete without the visit to this pious temple.  The beautiful stone carved temple in the woods is the abode of goddess Vrinda. Lying between the two kunds, Gupt and Vrinda Kund the exquisite Vrinda Devi Temple is also said to be the cultural heritage of the Mathura region.                
+            </p>
+        </div>
+
+        <div class="fact1">
+            <h2>Preserving the Legacy: The Story of Vraja's Disfigured Deities and Their Continued Presence</h2>
+            <p>Some five thousand years ago, after Krishna and His associates wound up Their earthly pastimes, the Lord's great-grandson, Vajranabha Maharaja, installed Deities of Krishna all over Vraja. Deities were installed also at Vrinda Kunda. Later, unfortunately, They were disfigured by Muslim invaders and for some time They disappeared from human sight. Today, although They are no longer worshiped, They are still giving darshan in a small kutir by the side of the main temple, under an old chokara tree.  
+            </p>
+        </div>
+        
+
+       
+    </section>
+     <div class="spots1" id="spots2">
+        <!-- <img src="fact.png" alt="error"> -->
+        <h1>Nearby Spots to Visit</h1>
+     </div>
+    <!-- <section class="spots">
+        
+        <div class="spot1">
+            <img src="jallianwala-bagh.webp" alt="error">
+           <h2>Jallianwala Bagh - War Memorial
+           </h2>
+            <a href="" class="btn">read more</a>
+
+        </div>
+
+        <div class="spot1">
+
+        </div>
+
+        <div class="spot1">
+
+        </div>
+
+
+
+
+
+
+    </section> -->
+    
+
+
+
+
+    <div class="container1">    
+          <div class="box-container">
+              <div class="box">                 
+                      <img src="pavana-sarovar-nandgaon.jpg" alt="error">
+                   <h4 class="active"> Pavana Sarovar</h4>
+                  <a href="https://www.tourmyindia.com/states/uttarpradesh/pavana-sarovar-nandgaon.html" class="btn1">read more</a>
+              </div>     
+              <div class="box">       
+                      <img src="ter-kadamb.jpg" alt="error">
+                    <h4 class="active"> Ter Kadamb Temple
+                    </h4>
+                  <a href="https://www.brijwale.com/ter-kadamb-nandgaon/" class="btn1">read more</a>
+              </div>
+              <div class="box">
+                <!-- <img src="icon-3.png" alt="">
+                <h3>JavaScript</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p> -->
+                <img src="shanidev-mandir-in-vrindavan.jpg" alt="error">
+                <h4 class="active">Kokilavan Temple</h4>
+                <a href="https://www.patrika.com/temples/kokilavan-shani-temple-mathura-4645685/" class="btn1">read more</a>
+            </div>
+    
+            <div class="box">
+                <!-- <img src="icon-4.png" alt="">
+                <h3>SASS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p> -->
+                <img src="asheshwar-mahadev-temple.jpg" alt="error">
+                <h4 class="active">Asheshwar Mahadev Temple</h4>
+                <a href="https://www.brijwale.com/asheshwar-mahadev/" class="btn1">read more</a>
+            </div>
+
+             </div>
+    </div>
+
+    <div class="location2" id="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113094.41533812985!2d77.18848617785662!3d27.64926841915555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397318042d1f30d5%3A0xbf19015ecbfcdcb1!2sVrinda%20Devi%20Temple%2C%20Nandgaon!5e0!3m2!1sen!2sin!4v1697101132329!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+    <div class="videos" id="video">
+        <h1>Videos</h1>
+    </div>
+    <!-- <div class="video1">
+        <iframe width="405px" height="415" src="https://www.youtube.com/embed/n3znrmSCWKk?si=zY9_0Zg8bqm8zLtm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="405px" height="415" src="https://www.youtube.com/embed/UHA4l_Nvzss?si=r97nIAHPqQ4Wtg9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div> -->
+
+
+    <div class="container2">    
+        <div class="box-container1">
+            <div class="box1">     
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/7-odQGG8XJ0?si=VUxwfJi1f_IZj5U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+            </div>     
+            <div class="box1">  
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/ig7V0Zo1krM?si=9VHaeSlfXekls6ou" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+            </div>
+            <div class="box1">
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/n1Sxj022-Tc?si=8ymjkGwinfDn2HUL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          <div class="box1">
+            <iframe width="350px" height="415" src="https://www.youtube.com/embed/wyC7rGqJ1Mk?si=yT4Q0UB-1Dq7f4ob" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+             
+          </div>
+
+           </div>
+    </div>
+        <div class="footer1">
+               <p>&copy; 2023 Divine Voyages. All rights reserved.</p>
+        </div>
+
+
+  
+    <script>
+        function openSideMenu(){
+    document.getElementById('side-menu').style.width= '225px';
+    document.getElementById('main').style.marginLeft= '225px';
+  }
+  
+  function closeSideMenu(){
+    document.getElementById('side-menu').style.width= '0px';
+    document.getElementById('main').style.marginLeft= '0px';
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+       
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Temple Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+        body{
+            background-color: beige;
+            margin-top: 46px;
+        }
+        .heading{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin: 20px auto; 
+        }
+        .heading h1{
+            font-size: 50px;
+            color: #000;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .heading h1::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            display: block;
+            margin: 0 auto;
+            background-color: #4caf50;
+        }
+        
+        .heading p {
+           font-size: 18px;
+           color: black;
+           /* color: #666; */
+           margin-bottom: 35px;
+        }
+        .container{
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+        .templeinfo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 2s ease;
+        }
+        .templeimage{
+            flex: 1;
+            margin-right: 40px;
+            overflow: hidden;
+        }
+        .templeimage img {
+    max-width: 90%;
+    height: 550px;
+    display: block;
+    transition: 0.5s ease;
+    animation: fadeInRight 2s ease;
+    width: 85%;
+}
+        .templeimage:hover img{
+            transform: scale(1.2);
+
+        }
+        .templecontent{
+            flex: 1;
+        }
+        .templecontent h2{
+            font-size: 23px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+       
+        .templecontent p {
+          font-size: 18px;
+          line-height: 1.5;
+          /* color: #666; */
+          color: black;
+         }
+        .templecontent .read-more{
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 19px;
+            background-color: #4caf50;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 15px;
+            transition: 0.3s ease;
+        }
+        .templecontent .read-more:hover{
+            background-color: #3e8e41;
+        }
+        .templecontent button{
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .templecontent button:hover{
+            transform: scale(0.9);
+        }
+        @media screen and (max-width: 768px){
+            .heading{
+                padding: 0px 20px;
+
+            }
+            .heading h1{
+                font-size: 36px;
+            }
+            .heading p{
+                font-size: 17px;
+                margin: 0px;
+            }
+            .container{
+                padding: 0px;
+            }
+            .templeinfo{
+                padding: 20px;
+                flex-direction: column;
+
+            }
+            .templeimage{
+                margin-right: 0px;
+                margin-bottom: 20px;
+                justify-content: center;
+                text-align: center;
+            }
+            .templecontent p{
+                padding: 0px;
+                font-size: 16px;
+            }
+            .templecontent .read-more{
+                font-size: 16px;
+               
+                
+            }
+            
+            
+            
+
+        }
+        @keyframes fadeInUp{
+            0%{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px)
+            }
+        }
+        @keyframes fadeInRight{
+            0%{
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        .facts {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.service-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: darkkhaki;
+}
+
+.fact1 {
+    flex: 1;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 50%;
+    margin: 0px 10px;
+    transition: 0.5s ease;
+}
+.fact1:hover{
+    transform: scale(1.05);
+}
+
+.fact1 h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: orange;
+}
+@media screen and (max-width: 768px) {
+  .fact1 {
+    flex: 0 0 100%; /* Make boxes take full width on smaller screens */
+    justify-content: space-between;
+    max-width: none; /* Remove maximum width */
+    flex-wrap: wrap;
+    margin: 0 0 20px;
+    
+  }
+}
+.spots {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
+.spots1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.spot1 {
+    flex: 1;
+    background-color: lightgreen;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 100%; 
+    margin: 0px 10px;
+}
+.spot1 img {
+    height: 193px;
+    border-radius: 10px;
+    width: 100%;
+    margin-left: -6px;
+}
+@media screen and (max-width: 768px) {
+  .spot1 {
+    flex: 0 0 100%; /* Make boxes take full width on smaller screens */
+    justify-content: space-between;
+    max-width: none; /* Remove maximum width */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 0 20px;
+    
+  }
+}   
+.spots .spot1 .btn{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+.spots .spot1 .btn:hover{
+    letter-spacing: 1px;
+}
+
+
+
+
+
+.container1 {
+    /* margin-top: -149px; */
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+   
+}
+ .box{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    /* padding:30px 20px; */
+    margin: 10px 10px;
+}
+
+/* .container1 .box-container .box img{
+    height: 80px;
+} */
+
+.container1 .box-container .box h4{
+    color: black;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+.container1 .box-container .box p{
+    color:#777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.container1 .box-container .box .btn1{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    text-decoration: none;
+}
+
+.container1 .box-container .box .btn1:hover{
+    letter-spacing: 1px;
+}
+.container1 .box-container .box:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+}
+@media (max-width:1000px){
+    .box-container{
+      flex-wrap: wrap;
+    }
+    .side-nav {
+    height: 30%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.35s;
+}
+
+   
+}
+.container1 .box-container .box img {
+    height: 171px;
+    width: 257px;
+    border-radius: 18px 15px;
+
+}
+.container1 .box-container .box {
+    box-shadow: px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 27px 20px;
+    width: 322px;
+}
+/* .templeimage a button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 166px;
+    margin-top: 55px;
+    background-color: red;
+    color: white;
+} */
+.templeimage a{
+    text-decoration: none;
+}
+.templeimage a button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 166px;
+    margin-top: 55px;
+    background-color: red;
+    color: floralwhite;
+    height: 39px;
+    padding: 10px 12px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+i.fa-solid fa-play{
+ 
+  color: black;
+
+}
+.fa-play:before {
+    content: "\f04b";
+    padding: 2px 3px;
+    cursor: pointer;
+}
+body{
+  font-family: "Arial", Serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  
+}
+.navbar{
+  background-color: #3b5998;
+  overflow: hidden;
+  height: 63px;
+}
+.navbar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar ul{
+  padding: 0;
+  margin-top: 8px;
+  list-style: none;
+  overflow: auto;
+}
+.navbar a:hover{
+  background-color: #aaa;
+  color: #000;
+}
+.side-nav {
+    height: 45%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.35s;
+}
+.side-nav a{
+  text-decoration: none;
+  padding: 10px 10px 10px 30px;
+  display: block;
+  font-size: 22px;
+  color: #aaa;
+}
+.side-nav a:hover{
+  color: #ffffff;
+}
+.side-nav .btn-close{
+  position:absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+}
+#main{
+  transition: 0.35s;
+  padding: 20px;
+  width: 100%;
+}
+
+@media only screen and (max-width:500px){
+  .navbar ul li{
+    display: none;
+  }
+  .templeimage a button{
+    justify-content: center;
+    text-align: center;
+  }
+}
+/* .location1{
+    justify-content: center;
+    text-align: center;
+} */
+.location1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.location2{
+    justify-content: center;
+    text-align: center;
+}
+.videos {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* .video1 iframe{
+    width: 50%;
+    height: 50%;
+} */
+.video1{
+    margin-top: 20px;
+    margin-left: 20px;
+   
+}
+.video1 iframe{
+    border-radius: 10px;
+}
+
+.container2 {
+    /* margin-top: -149px; */
+    background: linear-gradient(45deg, blueviolet, lightgreen);
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+.box-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+   
+}
+ .box1{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    /* padding:30px 20px; */
+    margin: 10px 10px;
+}
+
+@media (max-width:1000px){
+    .box-container1{
+      flex-wrap: wrap;
+    }
+    .footer1{
+        justify-content: center;
+        text-align: center;
+    }
+
+   
+}
+/* .container2 .box-container1 .box1 {
+    box-shadow: px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 27px 20px;
+    width: 322px;
+} */
+.footer1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <span class="open-slide">
+          <a href="#" onclick='openSideMenu()'>
+            <svg width='30' height='30'>
+              <path d='M0,5 30,5' stroke='#fff' stroke-width='5'/>
+              <path d='M0,14 30,14' stroke='#fff' stroke-width='5' />
+              <path d='M0,23 30,23' stroke='#fff' stroke-width='5' />
+            </svg>
+          </a>
+         </span>
+         
+         <!-- <ul class="navbar-nav">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Services</a></li>
+           <li><a href="#">Contact</a></li>
+         </ul> -->
+         
+       </nav>
+       
+       <div id='side-menu' class='side-nav'>
+         <a href="#" class='btn-close' onclick='closeSideMenu()'>&times;</a>
+         <a href="#heading1">Home</a>
+         <a href="#facts1">Facts</a>
+         <a href="#spots2">Spots</a>
+         <a href="#location">Location</a>
+         <a href="#video">Videos</a>
+       </div>
+
+
+
+
+
+
+
+    <div class="heading" id="heading1">
+        <h1>Golden Temple</h1>
+        <p>The Golden temple is located in the holy city of the Sikhs, Amritsar. The Golden temple is famous for its full golden dome, it is one of the most sacred pilgrim spots for Sikhs. The Mandir is built on a 67-ft square of marble and is a two storied structure.  
+            <br>
+           <strong> District: Amritsar</strong>
+            <br>
+            <strong>State: Punjab</strong> 
+        </p>
+
+    </div>
+    <div class="container">
+        <section class="templeinfo">
+            <div class="templeimage">
+                <img src="golden-temple (2).jpg" alt="error">
+                <a href="index20.html">
+                    <button>Watch 360
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </a>
+
+            </div>
+            <div class="templecontent">
+                <h2>Overview</h2>
+                <p>
+                    Maharaja Ranjit Singh had the upper half of the building built with approximately 400 kg of gold leaf. The Golden Temple is surrounded by a number of other famous temples like the Durgiana Temple. The fourth Guru of Sikhs, Guru Ram Das, who had initially constructed a pool here, founded Amritsar, which houses the Golden Temple or Harmandir Sahib. It is here that Sage Valmiki wrote the epic, Ramayana. Rama and Sita are believed to have spent their fourteen-year exile in Amritsar, the epicenter of Sikhism. To the south of the temple is a garden, and the tower of Baba Atal. The Central Sikh Museum is atop the Clock Tower. The ‘Guru Ka Langar’ offers free food to around 20,000 people everyday. The number shoots up to 100,000 on special occasions. A visitor must cover his / her head before entering the temple premises. The Granth Sahib is kept in the Temple during the day and is kept in the Akal Takht or Eternal Throne in the night. The Akal Takht also houses the ancient weapons used by the Sikh warriors. Guru Hargobind established it. The rugged old Jubi Tree in the north west corner of the compound is believed to possess special powers. It was planted 450 years ago, by the Golden Temple’s first high priest, Baba Buddha. Guru-ka-Langar or the communal canteen is towards the eastern entrance of the temple complex, and it provides free food to all visitors, regardless of colour, creed, caste or gender. Visitors to the Golden Temple must remove their shoes and cover their heads before entering the temple. The temple is less crowded in the early mornings on weekends.
+
+                </p>
+               <!-- <button class="read-more">Read More</button> -->
+            </div>
+        </section>
+    </div>
+    <div class="facts" id="facts1">
+        <!-- <img src="fact.png" alt="error"> -->
+        <h1>Interesting Facts about this temple</h1>
+    </div>
+
+    <section class="service-boxes">
+        <div class="fact1">
+            <h2>Lord Buddha Meditated at the Sacred Site</h2>
+            <p>Records show that Lord Buddha stayed at the sacred site of the Golden Temple for quite some time. In those times, the spot was a lake surrounded by thick forests. Buddha declared this site as an ideal meditation ground for sadhus and saints.</p>
+        </div>
+
+        <div class="fact1">
+            <h2>Construction Was Initiated by the Fifth Sikh Guru</h2>
+            <p>Long before the Golden Temple was built, Guru Nanak, the first Sikh Guru used to mediate at the holy site. However, the construction of the Sri Haramandir Sahib was initiated by Guru Arjan, the fifth Sikh Guru. He also designed the entire architecture of Sri Harmandir Sahib. The construction started in the year 1581 and took almost 8 years to complete.</p>
+        </div>
+
+        <div class="fact1">
+            <h2>Named After the Gold Covering</h2>
+            <p>Golden Temple was named after the outer layer of gold foil that covers the entire temple. After the death of Guru Govind Singh, this gurudwara was constantly attacked and destroyed by the Islamic rulers. In the year 1762, this religious heritage was completely blown away with gunpowder. After the devastation, Maharaja Ranjit Singh, a brave Sikh ruler rebuilt the rich heritage with marble and adorned it with gold. He took over the entire complex and appointed Desa Singh to look after its operation and maintenance.</p>
+        </div>
+        
+
+       
+    </section>
+     <div class="spots1" id="spots2">
+        <!-- <img src="fact.png" alt="error"> -->
+        <h1>Nearby Spots to Visit</h1>
+     </div>
+    <!-- <section class="spots">
+        
+        <div class="spot1">
+            <img src="jallianwala-bagh.webp" alt="error">
+           <h2>Jallianwala Bagh - War Memorial
+           </h2>
+            <a href="" class="btn">read more</a>
+
+        </div>
+
+        <div class="spot1">
+
+        </div>
+
+        <div class="spot1">
+
+        </div>
+
+
+
+
+
+
+    </section> -->
+    
+
+
+
+
+    <div class="container1">    
+          <div class="box-container">
+              <div class="box">                 
+                      <img src="jallianwala-bagh.webp" alt="error">
+                   <h4 class="active"> Jallianwala Bagh - War Memorial</h4>
+                  <a href="https://en.wikipedia.org/wiki/Jallianwala_Bagh_massacre" class="btn1">read more</a>
+              </div>     
+              <div class="box">       
+                      <img src="wagah-border.webp" alt="error">
+                    <h4 class="active"> Wagah Border - Beating Retreat
+                    </h4>
+                  <a href="https://en.wikipedia.org/wiki/Wagah" class="btn1">read more</a>
+              </div>
+              <div class="box">
+                <!-- <img src="icon-3.png" alt="">
+                <h3>JavaScript</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p> -->
+                <img src="Durgiana-Temple1.webp" alt="error">
+                <h4 class="active"> Durgiana Temple - Explore Inner Peace</h4>
+                <a href="https://en.wikipedia.org/wiki/Durgiana_Temple" class="btn1">read more</a>
+            </div>
+    
+            <div class="box">
+                <!-- <img src="icon-4.png" alt="">
+                <h3>SASS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p> -->
+                <img src="Maharaja-Ranjit-Singh-Museum2.webp" alt="error">
+                <h4 class="active">Maharaja Ranjit Singh Museum</h4>
+                <a href="https://amritsar.nic.in/tourist-place/maharaja-ranjit-singh-museum/" class="btn1">read more</a>
+            </div>
+
+             </div>
+    </div>
+
+    <div class="location1" id="location">
+        <h1>Location</h1>
+    </div>
+    <div class="location2">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1TpMVuVcHop9ARCssk9kC4ahF7Uk&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
+    </div>
+
+
+    <div class="videos" id="video">
+        <h1>Videos</h1>
+    </div>
+    <!-- <div class="video1">
+        <iframe width="405px" height="415" src="https://www.youtube.com/embed/n3znrmSCWKk?si=zY9_0Zg8bqm8zLtm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="405px" height="415" src="https://www.youtube.com/embed/UHA4l_Nvzss?si=r97nIAHPqQ4Wtg9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div> -->
+
+
+    <div class="container2">    
+        <div class="box-container1">
+            <div class="box1">     
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/QqUUUYO9uuw?si=c0OluWq7aYLgmWxT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+            </div>     
+            <div class="box1">  
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/4IvdmTK2Un4?si=QAQNJA_S6CdvptWK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+            </div>
+            <div class="box1">
+                <iframe width="350px" height="415" src="https://www.youtube.com/embed/m701WKQMeYQ?si=o84WaXjEKl5-7BtH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          <div class="box1">
+            <iframe width="350px" height="415" src="https://www.youtube.com/embed/4n4oOiU1BC8?si=LOkcwsmsTW7sM8xK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+             
+          </div>
+
+           </div>
+    </div>
+        <div class="footer1">
+               <p>&copy; 2023 Divine Voyages. All rights reserved.</p>
+        </div>
+    <script>
+        function openSideMenu(){
+    document.getElementById('side-menu').style.width= '225px';
+    document.getElementById('main').style.marginLeft= '225px';
+  }
+  
+  function closeSideMenu(){
+    document.getElementById('side-menu').style.width= '0px';
+    document.getElementById('main').style.marginLeft= '0px';
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    </script>
+    
+</body>
+</html>
